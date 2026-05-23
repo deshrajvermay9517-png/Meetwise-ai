@@ -1,0 +1,34 @@
+/* app/globals.css */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Font variables injected by next/font/google in layout.tsx */
+  --font-sans:  var(--font-dm-sans,  'DM Sans', system-ui, sans-serif);
+  --font-serif: var(--font-dm-serif, 'DM Serif Display', Georgia, serif);
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: #0a0a0a;
+  color: #f0ede8;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar        { width: 6px; height: 6px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: #2a2a2a; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3a3a; }
+
+/* Selection */
+::selection { background: #c9a96e33; color: #f0ede8; }
+

@@ -1,0 +1,13 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/reset-counts",
+      "schedule": "0 0 1 * *"
+    }
+  ],
+  "functions": {
+    "app/api/process/route.ts": {
+      "maxDuration": 300
+    }
+  }
+}
