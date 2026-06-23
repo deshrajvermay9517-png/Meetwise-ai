@@ -1,0 +1,13 @@
+# CODEOWNERS for Meetwise-ai
+# Details: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Each line is a file pattern followed by one or more owners.
+# These owners will be automatically requested for review on pull requests.
+
+# Assign everything to the default maintainer
+*       @deshrajvermay9517-png
+
+# Specific directory overrides (optional, but defaults back to owner)
+/docs/                      @deshrajvermay9517-png
+/.github/                   @deshrajvermay9517-png
+/supabase/                  @deshrajvermay9517-png

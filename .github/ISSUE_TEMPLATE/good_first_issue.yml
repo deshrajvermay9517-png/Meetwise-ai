@@ -1,0 +1,49 @@
+name: "🌱 Good First Issue"
+description: "A beginner-friendly task ideal for new contributors"
+title: "[Good First Issue]: "
+labels: ["good first issue", "beginner"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Welcome, new contributors! This is a beginner-friendly issue designed to help you get familiar with the codebase. Please fill out the details below.
+  - type: textarea
+    id: overview
+    attributes:
+      label: "Overview"
+      description: "Provide a simple description of the beginner-friendly task."
+      placeholder: "A brief summary of the task..."
+    validations:
+      required: true
+  - type: textarea
+    id: what_needs_to_be_done
+    attributes:
+      label: "What Needs to Be Done"
+      description: "Break down the exact code changes or tasks needed to resolve this issue in detail."
+      placeholder: "Clear step-by-step instructions for a beginner..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: "Expected Behavior"
+      description: "Describe how the system behaves after these changes are made."
+      placeholder: "What is the expected result of this change?"
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: "Acceptance Criteria"
+      description: "Provide clear checklist items that the contributor must satisfy to close this issue."
+      placeholder: "e.g., Update the placeholder text, verify build runs without errors, etc."
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: "Additional Context"
+      description: "Provide any helpful tips, code file links, or reference docs to assist the contributor."
+      placeholder: "Tips, hints, or links to help a beginner get started..."
+    validations:
+      required: false
