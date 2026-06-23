@@ -1,0 +1,49 @@
+name: "🚀 Feature Request"
+description: "Request a new feature or enhancement for Meetwise"
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a feature! Please fill out the form below to help us evaluate the request.
+  - type: textarea
+    id: overview
+    attributes:
+      label: "Overview"
+      description: "Describe the feature or enhancement you are requesting."
+      placeholder: "A clear and concise description of the feature..."
+    validations:
+      required: true
+  - type: textarea
+    id: what_needs_to_be_done
+    attributes:
+      label: "What Needs to Be Done"
+      description: "Detail the specific tasks or changes needed to implement this feature."
+      placeholder: "What specific changes should be made?"
+    validations:
+      required: true
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: "Expected Behavior"
+      description: "Describe how this feature should work from the user's perspective."
+      placeholder: "Describe the expected user experience..."
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: "Acceptance Criteria"
+      description: "Define the specific requirements that must be met for this feature to be considered complete."
+      placeholder: "e.g., A toggle button is added to the settings page and stores choice in localStorage."
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: "Additional Context"
+      description: "Add any other context, user stories, mockups, or design patterns here."
+      placeholder: "Why is this feature useful? Any screenshots/wireframes?"
+    validations:
+      required: false

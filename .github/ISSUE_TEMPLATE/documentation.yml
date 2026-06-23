@@ -1,0 +1,49 @@
+name: "📖 Documentation Task"
+description: "Request or suggest documentation improvements"
+title: "[Docs]: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping us improve our documentation! Please fill out the form below.
+  - type: textarea
+    id: overview
+    attributes:
+      label: "Overview"
+      description: "Describe what documentation needs to be added, updated, or corrected."
+      placeholder: "A clear and concise description of the documentation task..."
+    validations:
+      required: true
+  - type: textarea
+    id: what_needs_to_be_done
+    attributes:
+      label: "What Needs to Be Done"
+      description: "Specify the documents, guides, or sections that need modification."
+      placeholder: "Which files should be created or updated?"
+    validations:
+      required: true
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: "Expected Behavior"
+      description: "Explain what the updated documentation should convey or clarify."
+      placeholder: "What should readers learn or be able to achieve?"
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: "Acceptance Criteria"
+      description: "What conditions must the documentation satisfy to be complete?"
+      placeholder: "e.g., The setup instructions are updated to reflect the new Node.js v20 requirement."
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: "Additional Context"
+      description: "Add links to code, external resources, or discussions related to this documentation task."
+      placeholder: "Any additional references or links..."
+    validations:
+      required: false
