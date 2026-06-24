@@ -23,6 +23,15 @@ body {
   color: #f0ede8;
 }
 
+.meeting-card-wrapper:hover {
+  border-color: #333;
+}
+
+.meeting-card-wrapper {
+  border-color: #1f1f1f;
+  transition: border-color 0.15s ease;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar        { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track  { background: transparent; }
