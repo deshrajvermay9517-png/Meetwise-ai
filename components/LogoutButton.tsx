@@ -1,11 +1,10 @@
 'use client'
 import { createBrowserClient } from '@supabase/ssr'
 import { useRouter } from 'next/navigation'
-import { useState, useRef } from 'react'
+import { useRef } from 'react'
 
 export function LogoutButton() {
-  const [isOpen, setIsOpen] = useState(false);
-  const dialog = useRef<HTMLDialogElement>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
 
   const supabase = createBrowserClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -19,8 +18,9 @@ export function LogoutButton() {
     router.refresh()
   }
 
-  const openModal = () => setIsOpen(true);
-  const closeModal = () => setIsOpen(false); 
+  const openModal = () => dialogRef.current?.showModal();;
+
+  const closeModal = () => dialogRef.current?.close();
 
   return (
     <>
@@ -49,8 +49,21 @@ export function LogoutButton() {
         <span>⎋</span> Log out
       </button>
 
-      {/* Custom dialog for logout */}
-      {isOpen && (
+      {/* Custom native dialog for logout */}
+      <dialog 
+        ref={dialogRef}
+        onClose={closeModal}
+        aria-labelledby='logout-dialog-title'
+        style={{
+          border: 'none',
+          background: 'transparent',
+          padding: 0,
+          margin: 'auto', 
+          maxWidth: '100vw',
+          maxHeight: '100vh',
+          overflow: 'visible'
+        }}
+      >
         <div style={{
           position: 'fixed',
           top: 0,
@@ -58,6 +71,7 @@ export function LogoutButton() {
           width: '100vw',
           height: '100vh',
           backgroundColor: 'rgba(0, 0, 0, 0.4)',
+          backdropFilter: 'blur(4px)', 
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -74,13 +88,14 @@ export function LogoutButton() {
             fontFamily: '"DM Sans", sans-serif',
             color: '#fff'
           }}>
-            <h3 style={{ marginTop: 0, fontSize: '1.1rem' }}>Are you sure?</h3>
+            <h3 id='logout-dialog-title' style={{ marginTop: 0, fontSize: '1.1rem' }}>Are you sure?</h3>
             <p style={{ color: '#aaa', fontSize: '0.85rem', marginBottom: '1.5rem', marginTop: '1rem' }}>
               You will be signed out of your Meetwise session.
             </p>
             
             <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.5rem' }}>
               <button 
+                type="button"
                 onClick={closeModal}
                 style={{
                   background: 'transparent',
@@ -99,6 +114,7 @@ export function LogoutButton() {
                 Cancel
               </button>
               <button 
+                type="button"
                 onClick={handleLogout}
                 style={{
                   background: '#e34545',
@@ -119,7 +135,7 @@ export function LogoutButton() {
             </div>
           </div>
         </div>
-      )}
+      </dialog>
     </>
   )
 }
