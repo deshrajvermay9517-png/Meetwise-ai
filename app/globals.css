@@ -28,6 +28,7 @@ body {
 }
 
 .meeting-card-wrapper {
+  border: 1px solid;
   border-color: #1f1f1f;
   transition: border-color 0.15s ease;
 }

@@ -39,7 +39,7 @@ export function MeetingCard({ id, title, status, tldr, sentimentLabel, openActio
     <Link href={`/meetings/${id}`} style={{ textDecoration: 'none' }}>
       <div
         className='meeting-card-wrapper'
-        style={{ background: '#111', border: '1px solid #1f1f1f', borderRadius: '10px', padding: '1.25rem 1.5rem', display: 'flex', alignItems: 'center', gap: '1rem', cursor: 'pointer', transition: 'border-color 0.15s' }}        
+        style={{ background: '#111', borderRadius: '10px', padding: '1.25rem 1.5rem', display: 'flex', alignItems: 'center', gap: '1rem', cursor: 'pointer' }}
       >
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.4rem' }}>
