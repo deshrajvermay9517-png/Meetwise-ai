@@ -18,7 +18,12 @@ export function LogoutButton() {
     router.refresh()
   }
 
-  const openModal = () => dialogRef.current?.showModal();;
+  const openModal = () => {
+    const dialog = dialogRef.current
+    if (dialog && !dialog.open) {
+      dialog.showModal()
+    }
+  }
 
   const closeModal = () => dialogRef.current?.close();
 
